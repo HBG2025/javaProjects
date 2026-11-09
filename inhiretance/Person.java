@@ -4,7 +4,7 @@ public class Person {
     protected String nombre;
     protected char genero;
     protected int  edad;
-    protected String direccion;    
+    protected String direccion; 
 
     public Person(String nombre) {
         this.nombre = nombre;
@@ -16,23 +16,22 @@ public class Person {
         this.edad = edad;
         this.direccion = direccion;
     }
-
+    
     
     public String obtenerDetalles() {
         return "Name: %s, Age: %d ".formatted(this.nombre, this.edad);
-}
+    }
 
-            
-//    public String getNombre() {
-//        return this.nombre;
-//    }
+    public String getNombre() {
+        return nombre;
+    }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     public char getGenero() {
-        return this.genero;
+        return genero;
     }
 
     public void setGenero(char genero) {
@@ -40,7 +39,7 @@ public class Person {
     }
 
     public int getEdad() {
-        return this.edad;
+        return edad;
     }
 
     public void setEdad(int edad) {
@@ -48,7 +47,7 @@ public class Person {
     }
 
     public String getDireccion() {
-        return this.direccion;
+        return direccion;
     }
 
     public void setDireccion(String direccion) {
@@ -64,7 +63,6 @@ public class Person {
         sb.append(", edad=").append(edad);
         sb.append(", direccion=").append(direccion);
         sb.append('}');
-        return sb.toString();   
-    
-    }    
+        return sb.toString();
+    }
 }
