@@ -7,34 +7,40 @@ public class Cliente extends Person {
     private Date fechaRegsitro;
     private boolean vip;
     private static int contadorCliente;
-    
-    public Cliente(Date fechaRegsitri, boolean vip, String nombre, 
-            char genero, int edad, String direccion) {
-        
+
+    public Cliente(int idCliente, Date fechaRegsitro, boolean vip, String nombre) {
+        super(nombre);
+        this.idCliente = idCliente;
+        this.fechaRegsitro = fechaRegsitro;
+        this.vip = vip;
+    }
+
+    public Cliente(int idCliente, Date fechaRegsitro, boolean vip, String nombre, char genero, int edad, String direccion) {
         super(nombre, genero, edad, direccion);
-        this.idCliente = ++Cliente.contadorCliente;
-        this.fechaRegsitro = fechaRegsitri;
+        this.idCliente = idCliente;
+        this.fechaRegsitro = fechaRegsitro;
         this.vip = vip;
     }
 
     @Override
     public String obtenerDetalles() {
-        return super.obtenerDetalles() + "Es VIP: " + this.vip; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return super.obtenerDetalles() + "Es VIP: " + this.vip;
     }
-    
-    
-    
-    
+
     public int getIdCliente() {
         return idCliente;
     }
 
-    public Date getFechaRegsitri() {
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    public Date getFechaRegsitro() {
         return fechaRegsitro;
     }
 
-    public void setFechaRegsitri(Date fechaRegsitri) {
-        this.fechaRegsitro = fechaRegsitri;
+    public void setFechaRegsitro(Date fechaRegsitro) {
+        this.fechaRegsitro = fechaRegsitro;
     }
 
     public boolean isVip() {
@@ -45,15 +51,23 @@ public class Cliente extends Person {
         this.vip = vip;
     }
 
+    public static int getContadorCliente() {
+        return contadorCliente;
+    }
+
+    public static void setContadorCliente(int contadorCliente) {
+        Cliente.contadorCliente = contadorCliente;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Cliente{idCliente=").append(this.idCliente);
-        sb.append(", fechaRegsitri=").append(this.fechaRegsitro);
+        sb.append("Cliente{");
+        sb.append("idCliente=").append(idCliente);
+        sb.append(", fechaRegsitro=").append(fechaRegsitro);
         sb.append(", vip=").append(vip);
-        sb.append(", ").append(super.toString());
+                sb.append(", ").append(super.toString());
         sb.append('}');
         return sb.toString();
-    } 
-    
+    }    
 }
