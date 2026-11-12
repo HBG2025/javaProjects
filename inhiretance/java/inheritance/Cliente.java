@@ -66,7 +66,9 @@ public class Cliente extends Person {
         sb.append("idCliente=").append(idCliente);
         sb.append(", fechaRegsitro=").append(fechaRegsitro);
         sb.append(", vip=").append(vip);
-                sb.append(", ").append(super.toString());
+        sb.append(", ").append(super.toString());
+        // Invoca el método toString() de la clase padre para incluir los atributos heredados.
+        sb.append(", ").append(super.toString());
         sb.append('}');
         return sb.toString();
     }    
