@@ -23,8 +23,9 @@ Cliente::Cliente(int idCliente, time_t fechaRegistro,
     this->vip = vip;
 }
 
-// Retorna los detalles del cliente.
+// Retorna los atributos de Person y Cliente.
 string Cliente::obtenerDetalles() {
     return Person::obtenerDetalles()
-           + ", Es VIP: " + (vip ? "true" : "false");
+           + ", ID cliente: " + to_string(idCliente)
+           + ", Es VIP: " + (vip ? "Si" : "No");
 }
