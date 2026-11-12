@@ -15,7 +15,10 @@ Person::Person(string nombre, char genero, int edad, string direccion) {
     this->direccion = direccion;
 }
 
-// Retorna los detalles de la persona.
+// Retorna todos los atributos de la persona.
 string Person::obtenerDetalles() {
-    return "Name: " + nombre + ", Age: " + to_string(edad);
+    return "Nombre: " + nombre
+           + ", Genero: " + string(1, genero)
+           + ", Edad: " + to_string(edad)
+           + ", Direccion: " + direccion;
 }
