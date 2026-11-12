@@ -30,9 +30,9 @@ public class Employee extends Person {
         sb.append("idEmpleado=").append(idEmpleado);
         sb.append(", sueldo=").append(sueldo);
         sb.append('}');
+        sb.append(", ").append(super.toString());
+        // Invoca el método toString() de la clase padre para incluir los atributos heredados.
+        sb.append('}');
         return sb.toString();
-    }
-    
-    
-    
+    }                
 }
