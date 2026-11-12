@@ -19,7 +19,9 @@ Employee::Employee(int idEmpleado, double sueldo, string nombre,
     this->sueldo = sueldo;
 }
 
-// Retorna los detalles del empleado.
+// Retorna los atributos de Person y Employee.
 string Employee::obtenerDetalles() {
-    return "Name: " + nombre + ", Age: " + to_string(edad);
+    return Person::obtenerDetalles()
+           + ", ID empleado: " + to_string(idEmpleado)
+           + ", Sueldo: " + to_string(sueldo);
 }
